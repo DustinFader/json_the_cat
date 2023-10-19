@@ -1,7 +1,7 @@
 const request = require('request');
-const { [0]:search, [1]:api="https://api.thecatapi.com/v1/breeds/search?" } = process.argv.splice(2);
+const { [0]:search, [1]:api="https://api.thecatapi.com/v1/breeds/search?q=" } = process.argv.splice(2);
 
-const url = `${api}q=${search}`;
+const url = `${api}${search}`;
 console.log(url, search);
 request(url, (error, responce, body) => {
   if (error) {
